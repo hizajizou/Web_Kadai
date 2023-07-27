@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+    <title>Web演習 最終課題</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+
+    <main>
+
+        <div class="wrapper">
+            <nav role="navigation">
+                <div id="menuToggle">
+                    <!--
+              A fake / hidden checkbox is used as click reciever,
+              so you can use the :checked selector on it.
+              -->
+                    <input type="checkbox" />
+
+                    <!--
+              Some spans to act as a hamburger.
+              
+              They are acting like a real hamburger,
+              not that McDonalds stuff.
+              -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <!--
+              Too bad the menu has to be inside of the button
+              but hey, it's pure CSS magic.
+              -->
+                    <ul id="menu">
+                        <a href="home.html#home">
+                            <li>Home</li>
+                        </a>
+
+                        <a href="home.html#works">
+                            <li>Works</li>
+                        </a>
+
+                        <a href="home.html#about">
+                            <li>About</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="grid" id="home">
+                <p class="fonts animate__animated animate__fadeInDown">Web Exercises</p>
+                <h2 class="fonts animate__animated animate__fadeInDown">Portfolio</h2>
+                <img src="images/home.png" class="animate__animated animate__zoomIn">
+            </div>
+        </div>
+
+
+        <div class="wrap" id="works">
+            <div class="content">
+                <h1 class="animate__animated animate__zoomIn heading-lv1 text-center">WORKS</h1>
+            </div>
+        </div>
+
+        <div class="grid_container">
+
+            <div class="grid_main">
+                <figure class="snip1295">
+                    <img src="images/MP_gurade.PNG" alt="" />
+                    <div class="border one">
+                        <div></div>
+                    </div>
+                    <div class="border two">
+                        <div></div>
+                    </div>
+                    <a href="MP1.html"></a>
+                </figure>
+
+                <figure class="snip1295">
+                    <img src="images/MP_logo.PNG" alt="" />
+                    <div class="border one">
+                        <div></div>
+                    </div>
+                    <div class="border two">
+                        <div></div>
+                    </div>
+                    <a href="MP2.html"></a>
+                </figure>
+            </div>
+
+            <div class="grid_main">
+                <figure class="snip1295">
+                    <img src="images/IMkiso.JPG" alt="" />
+                    <div class="border one">
+                        <div></div>
+                    </div>
+                    <div class="border two">
+                        <div></div>
+                    </div>
+                    <a href="IMkiso.html"></a>
+                </figure>
+
+                <figure class="snip1295">
+                    <img src="images/CG.jpg" alt="" />
+                    <div class="border one">
+                        <div></div>
+                    </div>
+                    <div class="border two">
+                        <div></div>
+                    </div>
+                    <a href="CG.html"></a>
+                </figure>
+            </div>
+
+            <div class="grid_main">
+                <figure class="snip1295">
+                    <img src="images/InteractionEnshu.PNG" alt="" />
+                    <div class="border one">
+                        <div></div>
+                    </div>
+                    <div class="border two">
+                        <div></div>
+                    </div>
+                    <a href="Interaction.html"></a>
+                </figure>
+
+                <figure class="snip1295">
+                    <img src="images/WebHotel.png" alt="" />
+                    <div class="border one">
+                        <div></div>
+                    </div>
+                    <div class="border two">
+                        <div></div>
+                    </div>
+                    <a href="WebKadai.html"></a>
+                </figure>
+
+            </div>
+
+
+        </div>
+
+        <div class="wrap" id="about">
+            <div class="content">
+                <h1 class="animate__animated animate__zoomIn heading-lv1 text-center">ABOUT</h1>
+                <figure class="profile-image">
+                    <img src="images/icon.jpg" alt="" width="300" height="300">
+                </figure>
+
+                <h2 class="heading-lv2 heading-margin text-center">鈴木 日菜子</h2>
+
+                <h3 class="heading-lv3 heading-margin text-center">IM学科 2年</h3>
+                <p class="text text-center">2003年 4月 17日 生まれ<br>埼玉県 川越市 出身<br>終わりが見えなくて大変でした。</p>
+            </div>
+
+            <footer class="grid">
+                <div class="left">
+                    <p class="fonts">2023.7.27</p>
+                </div>
+            </footer>
+        </div>
+
+    </main>
+</body>
+
+</html>

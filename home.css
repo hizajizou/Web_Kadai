@@ -1,0 +1,498 @@
+        /* Resets */
+        
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        main {
+            margin: 50px;
+            margin-top: 150px;
+        }
+        /* Fonts */
+        
+        .grid .fonts {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        /* Variables */
+        
+         :root {
+            --bg: #1e2321;
+            --grid-spacing-horizontal: var(--spacing);
+            --spacing: 3rem;
+        }
+        /* Mobile Styles */
+        
+        body {
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+            /* make it look decent enough */
+            background: #232323;
+            color: #cdcdcd;
+        }
+        
+        .wrapper {
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            opacity: 0;
+            animation: fade 2s ease-in forwards;
+        }
+        
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        #menuToggle {
+            display: block;
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        
+        #menuToggle a {
+            text-decoration: none;
+            color: #232323;
+            transition: color 0.3s ease;
+        }
+        
+        #menuToggle a:hover {
+            color: tomato;
+        }
+        
+        #menuToggle input {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+            cursor: pointer;
+            opacity: 0;
+            /* hide this */
+            z-index: 2;
+            /* and place it over the hamburger */
+            -webkit-touch-callout: none;
+        }
+        /* Just a quick hamburger */
+        
+        #menuToggle span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            background: #cdcdcd;
+            border-radius: 3px;
+            z-index: 1;
+            transform-origin: 4px 0px;
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+        }
+        
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+        
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+        /* Transform all the slices of hamburger into a crossmark. */
+        
+        #menuToggle input:checked~span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: #232323;
+        }
+        /* Hide the middle one. */
+        
+        #menuToggle input:checked~span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+        /* The last one should go the other direction. */
+        
+        #menuToggle input:checked~span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+        /* Make this absolute positioned at the top left of the screen */
+        
+        #menu {
+            position: absolute;
+            width: 300px;
+            margin: -100px 0px 0px -50px;
+            padding: 50px;
+            padding-top: 125px;
+            background: #edededbe;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            /* to stop flickering of text in safari */
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+        
+        #menu li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
+        /* And let's slide it in from the left */
+        
+        #menuToggle input:checked~ul {
+            transform: none;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+        
+        header {
+            padding: 48px;
+            align-items: center;
+        }
+        
+        header h1 {
+            font-family: "Sallim";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 2.25rem;
+            color: #ffffff;
+        }
+        
+        header nav a {
+            text-decoration: none;
+            font-family: "Anticva";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: #ffffff;
+        }
+        
+        header nav {
+            grid-column: -1;
+        }
+        
+        header nav>*+* {
+            margin-left: 1rem;
+        }
+        
+        .grid {
+            grid-template-rows: auto auto auto auto auto;
+            overflow: hidden;
+        }
+        
+        .grid img {
+            grid-row: 1 / -2;
+            grid-column: 1/-1;
+            justify-self: center;
+            position: relative;
+            /* scale: 120%; */
+            width: 700px;
+            margin-top: 50px;
+            margin-bottom: 100px;
+            margin-left: 120px;
+            margin-right: 120px;
+            animation-duration: 2s;
+            animation-delay: 0.3s;
+        }
+        
+        .grid h2 {
+            font-family: "Anticva";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14rem;
+            height: 50vh;
+            color: #ffffff;
+            margin-bottom: 350px;
+            margin-left: 20px;
+            margin-right: 20px;
+            grid-column: 1 /-1;
+            grid-row: 3;
+            place-self: center;
+            z-index: 1;
+            animation-duration: 1s;
+            animation-delay: 2.5s;
+        }
+        
+        .grid p {
+            font-family: "Anticva";
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 100%;
+            color: #ffffff;
+            padding-bottom: 2rem;
+            grid-row: 2;
+            grid-column: -4 / span 3;
+            z-index: 1;
+            animation-duration: 1s;
+            animation-delay: 3s;
+        }
+        
+        footer .left p {
+            font-family: 'Nanum Myeongjo', serif;
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        footer {
+            padding: 48px;
+            margin-top: 100px;
+        }
+        
+        footer .left {
+            display: flex;
+            align-items: center;
+        }
+        
+        footer .left {
+            gap: 1rem;
+            grid-column: 1 / span 3;
+        }
+        
+        @media screen and (max-width: 1920px) {
+            .grid p {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+            .grid img {
+                max-width: 60%;
+                height: auto;
+            }
+        }
+        
+        @media screen and (max-width: 950px) {
+            .grid {
+                grid-template-columns: none;
+            }
+            .grid h2 {
+                font-size: 19vw;
+            }
+            .grid p {
+                grid-column: 1 / -1;
+                justify-self: end;
+                padding: 2rem;
+            }
+            header,
+            footer {
+                padding: 28px;
+            }
+        }
+        
+        @media screen and (max-width: 755px) {
+            #menu {
+                width: 40vw;
+            }
+            #menu li {
+                font-size: 3.5vw;
+            }
+        }
+        
+        .snip1295 {
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+            /* width: 3vw; */
+            /* max-width: 600px; */
+            width: 90%;
+            position: relative;
+            box-shadow: none !important;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-box-sizing: padding-box;
+            box-sizing: padding-box;
+            justify-self: center;
+        }
+        
+        .snip1295 img {
+            width: 100%;
+            vertical-align: top;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        }
+        
+        .snip1295 .border {
+            position: absolute;
+            opacity: 0.5;
+        }
+        
+        .snip1295 .border:before,
+        .snip1295 .border:after,
+        .snip1295 .border div:before,
+        .snip1295 .border div:after {
+            background-color: #ffffff;
+            position: absolute;
+            content: "";
+            display: block;
+            -webkit-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .snip1295 .border:before,
+        .snip1295 .border:after {
+            width: 0;
+            height: 2px;
+        }
+        
+        .snip1295 .border div:before,
+        .snip1295 .border div:after {
+            width: 2px;
+            height: 0;
+        }
+        
+        .snip1295 .border.one {
+            left: 0;
+            top: 0;
+            right: 12px;
+            bottom: 12px;
+        }
+        
+        .snip1295 .border.one:before,
+        .snip1295 .border.one div:before {
+            left: 0;
+            top: 0;
+        }
+        
+        .snip1295 .border.one:after,
+        .snip1295 .border.one div:after {
+            bottom: 0;
+            right: 0;
+        }
+        
+        .snip1295 .border.two {
+            left: 12px;
+            top: 12px;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .snip1295 .border.two:before,
+        .snip1295 .border.two div:before {
+            right: 0;
+            top: 0;
+        }
+        
+        .snip1295 .border.two:after,
+        .snip1295 .border.two div:after {
+            bottom: 0;
+            left: 0;
+        }
+        
+        .snip1295 a {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .snip1295:hover .border:before,
+        .snip1295.hover .border:before,
+        .snip1295:hover .border:after,
+        .snip1295.hover .border:after {
+            width: 100%;
+        }
+        
+        .snip1295:hover .border div:before,
+        .snip1295.hover .border div:before,
+        .snip1295:hover .border div:after,
+        .snip1295.hover .border div:after {
+            height: 100%;
+        }
+        
+        .grid_main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-column-gap: var(--grid-spacing-horizontal);
+            width: 100%;
+            gap: 40px 6%;
+        }
+        
+        .grid_container {
+            display: grid;
+            width: 100%;
+            max-width: 1500px;
+            /* もしコンテナの幅を制限したい場合は適切な値を指定してください */
+            margin: 0 auto;
+            /* 上記の2つのmarginプロパティを統合してセンタリングを行います */
+            position: relative;
+            gap: 40px 6%;
+        }
+        /* about */
+        
+        .wrap {
+            padding: 300px 0 64px;
+            text-align: center;
+            display: grid;
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        
+        .content {
+            color: white;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+            text-align: center;
+            /* 必要に応じてテキストも中央揃えにする */
+        }
+        
+        .heading-lv1 {
+            font-size: 40px;
+            animation-duration: 2s;
+            animation-delay: 0.3s;
+        }
+        
+        .heading-lv2 {
+            font-size: 24px;
+        }
+        
+        .heading-lv3 {
+            font-size: 20px;
+        }
+        
+        .heading-margin {
+            margin-top: 32px;
+        }
+        
+        .text {
+            margin: 16px 0 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .profile-image {
+            margin: 16px 0 0;
+            text-align: center;
+            grid-row: 1 / -2;
+        }
+        
+        .profile-image img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
